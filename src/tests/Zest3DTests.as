@@ -14,7 +14,12 @@ package tests
 		{
 			super();
 			
+			// zest3d.datatypes.Transform
+			addTest( new TransformTestCase( "equals" ) );
+			addTest( new TransformTestCase( "clone" ) );
 			addTest( new TransformTestCase( "toIdentity" ) );
+			addTest( new TransformTestCase( "toUnitScale" ) );
+			addTest( new TransformTestCase( "isIdentity" ) );
 		}
 		
 	}
