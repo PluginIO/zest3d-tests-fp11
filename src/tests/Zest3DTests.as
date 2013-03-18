@@ -20,6 +20,8 @@ package tests
 			addTest( new TransformTestCase( "toIdentity" ) );
 			addTest( new TransformTestCase( "toUnitScale" ) );
 			addTest( new TransformTestCase( "isIdentity" ) );
+			addTest( new TransformTestCase( "isRSMatrix" ) );
+			addTest( new TransformTestCase( "isUniformScale" ) );
 		}
 		
 	}

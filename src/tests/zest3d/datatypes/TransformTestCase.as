@@ -115,6 +115,44 @@ package tests.zest3d.datatypes
 		}
 		//}
 		
+		//{ Region isRSMatrix
+		public function isRSMatrix(): void
+		{
+			var t0: Transform = new Transform();
+			assertTrue( t0.isRSMatrix );
+			
+			t0.rotate = new HMatrix().rotationY( 10 );
+			assertTrue( t0.isRSMatrix );
+			
+			t0.translate = new APoint( 5, 10, 15 );
+			assertTrue( t0.isRSMatrix );
+			
+			t0.scale = new APoint( 5, 10, 15 );
+			assertTrue( t0.isRSMatrix );
+			
+			t0.setMatrix( new HMatrix().rotationZ( 0 ) );
+			assertFalse( t0.isRSMatrix );
+		}
+		//}
+		
+		//{ Region isUniformScale
+		public function isUniformScale(): void
+		{
+			var t0: Transform = new Transform();
+			assertTrue( t0.isUniformScale );
+			
+			t0.scale = new APoint( 1, 2, 3 );
+			assertFalse( t0.isUniformScale );
+			
+			t0.uniformScale = 5;
+			assertTrue( t0.isUniformScale );
+			
+			t0.toIdentity();
+			assertTrue( t0.isUniformScale );
+		}
+		//}
+		
+		
 	}
 
 }
